@@ -15,4 +15,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
     redirect_to @recipe
   end
+
+  private 
+
+  def recipe_params 
+    params.require(:recipe).permit(:title)
+  end
 end
