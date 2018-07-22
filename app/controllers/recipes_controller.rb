@@ -12,13 +12,13 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new
+    @recipe = Recipe.new(recipe_params)
     redirect_to @recipe
   end
 
-  private 
+  private
 
-  def recipe_params 
+  def recipe_params
     params.require(:recipe).permit(:title)
   end
 end
