@@ -13,5 +13,6 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new
+    redirect_to @recipe
   end
 end
